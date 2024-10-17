@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_buttons_telefoonnummers",
+  "info": {
+    "displayName": "Telefoonnummer",
+    "icon": "phone"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "telefoonnummer": {
+      "type": "string",
+      "required": true,
+      "regex": "^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\./0-9]*$"
+    },
+    "emailadressen": {
+      "displayName": "Email",
+      "type": "component",
+      "repeatable": true,
+      "component": "buttons.email"
+    }
+  }
+}

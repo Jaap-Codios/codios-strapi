@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_footer_contacts",
+  "info": {
+    "displayName": "contact",
+    "icon": "envelop"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "telefoonnummers": {
+      "displayName": "Telefoonnummer",
+      "type": "component",
+      "repeatable": true,
+      "component": "buttons.telefoonnummer"
+    },
+    "adres": {
+      "type": "blocks",
+      "required": true
+    },
+    "socials": {
+      "displayName": "Social media button",
+      "type": "component",
+      "repeatable": true,
+      "component": "buttons.social-media-button"
+    }
+  }
+}

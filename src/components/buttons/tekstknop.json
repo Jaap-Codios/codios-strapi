@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_buttons_tekstknops",
+  "info": {
+    "displayName": "Tekstknop",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

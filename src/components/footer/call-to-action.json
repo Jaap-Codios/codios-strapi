@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_footer_call_to_actions",
+  "info": {
+    "displayName": "Call to action",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "titel": {
+      "type": "string",
+      "required": true
+    },
+    "ondertitel": {
+      "type": "text",
+      "required": true
+    },
+    "knop": {
+      "displayName": "Primaire knop",
+      "type": "component",
+      "repeatable": false,
+      "component": "buttons.primaire-knop"
+    }
+  }
+}

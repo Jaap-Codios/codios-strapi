@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Footer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "call_to_action": {
+      "displayName": "Call to action",
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.call-to-action"
+    },
+    "contactinformatie": {
+      "displayName": "contact",
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.contact"
+    },
+    "linkjes": {
+      "type": "dynamiczone",
+      "components": [
+        "buttons.tekstknop"
+      ]
+    }
+  }
+}
