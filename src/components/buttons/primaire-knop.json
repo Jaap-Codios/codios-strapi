@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_buttons_primaire_knops",
+  "info": {
+    "displayName": "Primaire knop",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

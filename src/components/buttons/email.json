@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_buttons_emails",
+  "info": {
+    "displayName": "Email",
+    "icon": "envelop"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    }
+  }
+}

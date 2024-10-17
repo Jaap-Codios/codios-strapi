@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_buttons_social_media_buttons",
+  "info": {
+    "displayName": "Social media button",
+    "icon": "paperPlane"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
