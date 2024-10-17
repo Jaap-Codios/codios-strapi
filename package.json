@@ -12,15 +12,17 @@
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.1.0",
+    "@strapi/plugin-documentation": "^5.1.0",
+    "@strapi/plugin-seo": "^2.0.1-rc.1",
     "@strapi/plugin-users-permissions": "5.1.0",
     "@strapi/strapi": "5.1.0",
     "pg": "8.8.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
+    "strapi-plugin-navigation": "^3.0.0-beta.2",
     "styled-components": "^6.0.0"
   },
-  "devDependencies": {},
   "engines": {
     "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"
