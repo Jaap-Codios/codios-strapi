@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_secties_foto_secties",
+  "info": {
+    "displayName": "Foto sectie",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "fotos": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

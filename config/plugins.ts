@@ -4,19 +4,29 @@ export default ({ env }) => ({
             jwtSecret: env('JWT_SECRET'),
         },
     },
-    upload: {
+    'strapi-v5-plugin-populate-deep': {
         config: {
-            provider: 'cloudinary',
-            providerOptions: {
-                cloud_name: env('CLOUDINARY_NAME'),
-                api_key: env('CLOUDINARY_KEY'),
-                api_secret: env('CLOUDINARY_SECRET'),
-            },
-            actionOptions: {
-                upload: {},
-                uploadStream: {},
-                delete: {},
-            },
-        },
+        defaultDepth: 8,
+        maxDepth: 10, 
+        }
     },
+    navigation: {
+        enabled: true,
+    }
+    // upload: {
+    //     config: {
+    //         provider: 'cloudinary',
+    //         providerOptions: {
+    //             cloud_name: env('CLOUDINARY_NAME'),
+    //             api_key: env('CLOUDINARY_KEY'),
+    //             api_secret: env('CLOUDINARY_SECRET'),
+    //         },
+    //         actionOptions: {
+    //             upload: {},
+    //             uploadStream: {},
+    //             delete: {},
+    //         },
+    //     },
+    // },
 });
+

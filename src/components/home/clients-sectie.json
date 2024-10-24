@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_home_clients_secties",
+  "info": {
+    "displayName": "Clients sectie",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "titel": {
+      "type": "string",
+      "required": true,
+      "default": "Clients"
+    },
+    "ondertitel": {
+      "type": "string",
+      "required": true,
+      "default": "Deze bedrijven gingen je al voor!"
+    },
+    "clients": {
+      "displayName": "client",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.client"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_spotify_minutens",
+  "info": {
+    "displayName": "Spotify minuten",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "minuten": {
+      "type": "string"
+    },
+    "persoon": {
+      "type": "string"
+    }
+  }
+}

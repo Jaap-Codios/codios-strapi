@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_components_koffie_statistieks",
+  "info": {
+    "displayName": "Koffie statistiek",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "codios_startdatum": {
+      "type": "datetime",
+      "required": true
+    },
+    "koffie_per_dag": {
+      "type": "decimal"
+    }
+  }
+}

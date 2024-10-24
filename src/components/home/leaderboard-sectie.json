@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_home_leaderboard_secties",
+  "info": {
+    "displayName": "Leaderboard sectie",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titel": {
+      "type": "string",
+      "default": "Onze leaderboards",
+      "required": true
+    },
+    "meeste_koekjes_persoon": {
+      "type": "string",
+      "default": "Jaap",
+      "required": true
+    },
+    "regels_code": {
+      "type": "string",
+      "required": true
+    },
+    "spotify": {
+      "displayName": "Spotify minuten",
+      "type": "component",
+      "repeatable": false,
+      "component": "components.spotify-minuten",
+      "required": true
+    },
+    "grappenmaker": {
+      "type": "string",
+      "default": "Giovanni",
+      "required": true
+    },
+    "aantal_meetings": {
+      "type": "string",
+      "required": true
+    },
+    "koffie": {
+      "displayName": "Koffie statistiek",
+      "type": "component",
+      "repeatable": false,
+      "component": "components.koffie-statistiek",
+      "required": true
+    }
+  }
+}

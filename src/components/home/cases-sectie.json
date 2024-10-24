@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_home_cases_secties",
+  "info": {
+    "displayName": "Cases sectie",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "titel": {
+      "type": "string",
+      "required": true,
+      "default": "Cases"
+    },
+    "ondertitel": {
+      "type": "string",
+      "required": true,
+      "default": "Hier zijn we trots op!"
+    },
+    "aapje_tekst": {
+      "type": "string",
+      "default": "Apetrots!",
+      "required": true,
+      "maxLength": 13
+    },
+    "cases": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::case.case"
+    }
+  }
+}

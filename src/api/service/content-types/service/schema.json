@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "naam": {
+      "type": "string",
+      "required": true
+    },
+    "achtergrond_foto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "secties.foto-sectie"
+      ],
+      "min": 1
+    }
+  }
+}

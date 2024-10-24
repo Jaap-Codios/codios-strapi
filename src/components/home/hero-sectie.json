@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_home_hero_secties",
+  "info": {
+    "displayName": "Hero sectie",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ondertitel": {
+      "type": "string",
+      "required": true,
+      "default": "Onze missie is om met plezier en transparantie innovatie web en app omgevingen te bouwen."
+    },
+    "titel": {
+      "type": "richtext",
+      "required": true
+    },
+    "primaire_knop": {
+      "type": "component",
+      "repeatable": false,
+      "component": "buttons.primaire-knop",
+      "required": true
+    },
+    "tekst_knop": {
+      "type": "component",
+      "repeatable": true,
+      "component": "buttons.tekstknop",
+      "required": true,
+      "max": 3
+    }
+  }
+}

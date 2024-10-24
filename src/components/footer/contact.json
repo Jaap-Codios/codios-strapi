@@ -2,17 +2,18 @@
   "collectionName": "components_footer_contacts",
   "info": {
     "displayName": "contact",
-    "icon": "envelop"
+    "icon": "envelop",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "logo": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "telefoonnummers": {
       "displayName": "Telefoonnummer",
@@ -20,15 +21,20 @@
       "repeatable": true,
       "component": "buttons.telefoonnummer"
     },
-    "adres": {
-      "type": "blocks",
-      "required": true
-    },
     "socials": {
       "displayName": "Social media button",
       "type": "component",
       "repeatable": true,
       "component": "buttons.social-media-button"
+    },
+    "emailaddressen": {
+      "type": "component",
+      "repeatable": true,
+      "component": "buttons.email"
+    },
+    "adres": {
+      "type": "text",
+      "required": false
     }
   }
 }
