@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "team_leden",
+  "info": {
+    "singularName": "team-lid",
+    "pluralName": "team-leden",
+    "displayName": "Team lid",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Naam": {
+      "type": "string",
+      "required": true
+    },
+    "functie": {
+      "type": "string",
+      "required": true
+    },
+    "hobbies": {
+      "displayName": "Hobby",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.hobby",
+      "max": 6
+    },
+    "favoriete_nummer": {
+      "type": "string",
+      "default": "6VwLZkvBB64TbPkjVFskOC",
+      "regex": "^[a-zA-Z0-9]{22}$",
+      "required": true
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

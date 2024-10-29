@@ -665,6 +665,8 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
       'components.homescreen-showcase',
       false
     >;
+    achtergrond_foto: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -674,6 +676,44 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::case.case'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactContact extends Struct.SingleTypeSchema {
+  collectionName: 'contacts';
+  info: {
+    singularName: 'contact';
+    pluralName: 'contacts';
+    displayName: 'Contact';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    email: Schema.Attribute.Component<'buttons.email', false>;
+    telefoonnummer: Schema.Attribute.Component<'buttons.telefoonnummer', false>;
+    adres: Schema.Attribute.Text;
+    btw_nummer: Schema.Attribute.String & Schema.Attribute.Required;
+    iban: Schema.Attribute.Text & Schema.Attribute.Required;
+    titel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Contact'>;
+    hero: Schema.Attribute.Component<'secties.hero-sectie', false> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact.contact'
+    > &
       Schema.Attribute.Private;
   };
 }
@@ -743,6 +783,81 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiOverOnsOverOns extends Struct.SingleTypeSchema {
+  collectionName: 'over_onsen';
+  info: {
+    singularName: 'over-ons';
+    pluralName: 'over-onsen';
+    displayName: 'Over ons';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.DynamicZone<
+      [
+        'secties.tekst-met-foto-verticaal',
+        'secties.tekst-met-foto-horizontaal',
+        'secties.team-sectie',
+        'secties.tekst-met-titel-rechts',
+        'secties.tekst-met-titel-links',
+        'secties.hero-sectie',
+        'secties.call-to-action-gecentreerd',
+      ]
+    >;
+    hero: Schema.Attribute.Component<'secties.hero-sectie', false> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::over-ons.over-ons'
+    > &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPortfolioPortfolio extends Struct.SingleTypeSchema {
+  collectionName: 'portfolios';
+  info: {
+    singularName: 'portfolio';
+    pluralName: 'portfolios';
+    displayName: 'Portfolio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Portfolio'>;
+    ondertitel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Kijk gerust even rond!'>;
+    cases: Schema.Attribute.Relation<'oneToMany', 'api::case.case'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::portfolio.portfolio'
+    > &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
@@ -775,6 +890,47 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::service.service'
+    > &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTeamLidTeamLid extends Struct.CollectionTypeSchema {
+  collectionName: 'team_leden';
+  info: {
+    singularName: 'team-lid';
+    pluralName: 'team-leden';
+    displayName: 'Team lid';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Naam: Schema.Attribute.String & Schema.Attribute.Required;
+    functie: Schema.Attribute.String & Schema.Attribute.Required;
+    hobbies: Schema.Attribute.Component<'components.hobby', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 6;
+        },
+        number
+      >;
+    favoriete_nummer: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'6VwLZkvBB64TbPkjVFskOC'>;
+    foto: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::team-lid.team-lid'
     > &
       Schema.Attribute.Private;
   };
@@ -1166,9 +1322,13 @@ declare module '@strapi/strapi' {
       'plugin::navigation.navigation': PluginNavigationNavigation;
       'plugin::navigation.navigation-item': PluginNavigationNavigationItem;
       'api::case.case': ApiCaseCase;
+      'api::contact.contact': ApiContactContact;
       'api::footer.footer': ApiFooterFooter;
       'api::home.home': ApiHomeHome;
+      'api::over-ons.over-ons': ApiOverOnsOverOns;
+      'api::portfolio.portfolio': ApiPortfolioPortfolio;
       'api::service.service': ApiServiceService;
+      'api::team-lid.team-lid': ApiTeamLidTeamLid;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;

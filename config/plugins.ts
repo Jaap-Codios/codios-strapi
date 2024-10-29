@@ -13,6 +13,7 @@ export default ({ env }) => ({
     navigation: {
         enabled: true,
     }
+    
     // upload: {
     //     config: {
     //         provider: 'cloudinary',

@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "over_onsen",
+  "info": {
+    "singularName": "over-ons",
+    "pluralName": "over-onsen",
+    "displayName": "Over ons",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "secties.tekst-met-foto-verticaal",
+        "secties.tekst-met-foto-horizontaal",
+        "secties.team-sectie",
+        "secties.tekst-met-titel-rechts",
+        "secties.tekst-met-titel-links",
+        "secties.hero-sectie",
+        "secties.call-to-action-gecentreerd"
+      ]
+    },
+    "hero": {
+      "displayName": "Hero sectie",
+      "type": "component",
+      "repeatable": false,
+      "component": "secties.hero-sectie",
+      "required": true
+    }
+  }
+}

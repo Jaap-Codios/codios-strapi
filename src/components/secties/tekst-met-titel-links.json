@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_secties_tekst_met_titel_links",
+  "info": {
+    "displayName": "Tekst met titel links",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "titel": {
+      "type": "string",
+      "required": true
+    },
+    "tekst": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

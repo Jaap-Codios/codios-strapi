@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_secties_tekst_met_foto_horizontaals",
+  "info": {
+    "displayName": "Tekst met foto horizontaal sectie",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titel": {
+      "type": "string",
+      "required": true
+    },
+    "tekst": {
+      "type": "text",
+      "required": true
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

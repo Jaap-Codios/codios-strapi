@@ -1,0 +1,48 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "component",
+      "repeatable": false,
+      "component": "buttons.email"
+    },
+    "telefoonnummer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "buttons.telefoonnummer"
+    },
+    "adres": {
+      "type": "text"
+    },
+    "btw_nummer": {
+      "type": "string",
+      "required": true
+    },
+    "iban": {
+      "type": "text",
+      "required": true
+    },
+    "titel": {
+      "type": "string",
+      "required": true,
+      "default": "Contact"
+    },
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "secties.hero-sectie",
+      "required": true
+    }
+  }
+}
