@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "portfolios",
+  "info": {
+    "singularName": "portfolio",
+    "pluralName": "portfolios",
+    "displayName": "Portfolio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titel": {
+      "type": "string",
+      "required": true,
+      "default": "Portfolio"
+    },
+    "ondertitel": {
+      "type": "string",
+      "default": "Kijk gerust even rond!",
+      "required": true
+    },
+    "cases": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::case.case"
+    }
+  }
+}

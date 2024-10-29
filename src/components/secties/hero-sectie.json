@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_secties_hero_secties",
+  "info": {
+    "displayName": "Hero sectie",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "titel": {
+      "type": "string",
+      "required": true
+    },
+    "achtergrond_foto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

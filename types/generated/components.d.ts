@@ -1,5 +1,85 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
+export interface SectiesTekstMetTitelRechts extends Struct.ComponentSchema {
+  collectionName: 'components_secties_tekst_met_titel_rechts';
+  info: {
+    displayName: 'Tekst met titel rechts';
+    icon: 'bulletList';
+  };
+  attributes: {
+    titel: Schema.Attribute.String & Schema.Attribute.Required;
+    tekst: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface SectiesTekstMetTitelLinks extends Struct.ComponentSchema {
+  collectionName: 'components_secties_tekst_met_titel_links';
+  info: {
+    displayName: 'Tekst met titel links';
+    icon: 'bulletList';
+  };
+  attributes: {
+    titel: Schema.Attribute.String & Schema.Attribute.Required;
+    tekst: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface SectiesTekstMetFotoVerticaal extends Struct.ComponentSchema {
+  collectionName: 'components_secties_tekst_met_foto_verticaals';
+  info: {
+    displayName: 'Tekst met foto verticaal sectie';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    titel: Schema.Attribute.String & Schema.Attribute.Required;
+    tekst: Schema.Attribute.Text & Schema.Attribute.Required;
+    foto: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface SectiesTekstMetFotoHorizontaal extends Struct.ComponentSchema {
+  collectionName: 'components_secties_tekst_met_foto_horizontaals';
+  info: {
+    displayName: 'Tekst met foto horizontaal sectie';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    titel: Schema.Attribute.String & Schema.Attribute.Required;
+    tekst: Schema.Attribute.Text & Schema.Attribute.Required;
+    foto: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface SectiesTeamSectie extends Struct.ComponentSchema {
+  collectionName: 'components_secties_team_secties';
+  info: {
+    displayName: 'Team sectie';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    titel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Ons team'>;
+    team: Schema.Attribute.Relation<'oneToMany', 'api::team-lid.team-lid'>;
+  };
+}
+
+export interface SectiesHeroSectie extends Struct.ComponentSchema {
+  collectionName: 'components_secties_hero_secties';
+  info: {
+    displayName: 'Hero sectie';
+    icon: 'bulletList';
+  };
+  attributes: {
+    titel: Schema.Attribute.String & Schema.Attribute.Required;
+    achtergrond_foto: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface SectiesFotoSectie extends Struct.ComponentSchema {
   collectionName: 'components_secties_foto_secties';
   info: {
@@ -8,6 +88,47 @@ export interface SectiesFotoSectie extends Struct.ComponentSchema {
   };
   attributes: {
     fotos: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
+  };
+}
+
+export interface SectiesCallToActionGecentreerd extends Struct.ComponentSchema {
+  collectionName: 'components_secties_call_to_action_gecentreerds';
+  info: {
+    displayName: 'Call to action gecentreerd';
+    icon: 'bulletList';
+  };
+  attributes: {
+    tekst: Schema.Attribute.String & Schema.Attribute.Required;
+    knop: Schema.Attribute.Component<'buttons.primaire-knop', false>;
+  };
+}
+
+export interface FooterContact extends Struct.ComponentSchema {
+  collectionName: 'components_footer_contacts';
+  info: {
+    displayName: 'contact';
+    icon: 'envelop';
+    description: '';
+  };
+  attributes: {
+    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    telefoonnummers: Schema.Attribute.Component<'buttons.telefoonnummer', true>;
+    socials: Schema.Attribute.Component<'buttons.social-media-button', true>;
+    emailaddressen: Schema.Attribute.Component<'buttons.email', true>;
+    adres: Schema.Attribute.Text;
+  };
+}
+
+export interface FooterCallToAction extends Struct.ComponentSchema {
+  collectionName: 'components_footer_call_to_actions';
+  info: {
+    displayName: 'Call to action';
+    icon: 'cursor';
+  };
+  attributes: {
+    titel: Schema.Attribute.String & Schema.Attribute.Required;
+    ondertitel: Schema.Attribute.Text & Schema.Attribute.Required;
+    knop: Schema.Attribute.Component<'buttons.primaire-knop', false>;
   };
 }
 
@@ -121,6 +242,78 @@ export interface HomeCasesSectie extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsSpotifyMinuten extends Struct.ComponentSchema {
+  collectionName: 'components_components_spotify_minutens';
+  info: {
+    displayName: 'Spotify minuten';
+    icon: 'bulletList';
+  };
+  attributes: {
+    minuten: Schema.Attribute.String;
+    persoon: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsService extends Struct.ComponentSchema {
+  collectionName: 'components_components_services';
+  info: {
+    displayName: 'Service';
+    icon: 'bulletList';
+  };
+  attributes: {};
+}
+
+export interface ComponentsKoffieStatistiek extends Struct.ComponentSchema {
+  collectionName: 'components_components_koffie_statistieks';
+  info: {
+    displayName: 'Koffie statistiek';
+    icon: 'bulletList';
+  };
+  attributes: {
+    codios_startdatum: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    koffie_per_dag: Schema.Attribute.Decimal;
+  };
+}
+
+export interface ComponentsHomescreenShowcase extends Struct.ComponentSchema {
+  collectionName: 'components_components_homescreen_showcases';
+  info: {
+    displayName: 'homescreen_showcase';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    mobile: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    tablet: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    laptop: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentsHobby extends Struct.ComponentSchema {
+  collectionName: 'components_components_hobbies';
+  info: {
+    displayName: 'Hobby';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    tekst: Schema.Attribute.String;
+    illustratie: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentsClient extends Struct.ComponentSchema {
+  collectionName: 'components_components_clients';
+  info: {
+    displayName: 'client';
+    icon: 'bulletList';
+  };
+  attributes: {
+    naam: Schema.Attribute.String & Schema.Attribute.Required;
+    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
 export interface ButtonsTelefoonnummer extends Struct.ComponentSchema {
   collectionName: 'components_buttons_telefoonnummers';
   info: {
@@ -182,115 +375,35 @@ export interface ButtonsEmail extends Struct.ComponentSchema {
   };
 }
 
-export interface FooterContact extends Struct.ComponentSchema {
-  collectionName: 'components_footer_contacts';
-  info: {
-    displayName: 'contact';
-    icon: 'envelop';
-    description: '';
-  };
-  attributes: {
-    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    telefoonnummers: Schema.Attribute.Component<'buttons.telefoonnummer', true>;
-    socials: Schema.Attribute.Component<'buttons.social-media-button', true>;
-    emailaddressen: Schema.Attribute.Component<'buttons.email', true>;
-    adres: Schema.Attribute.Text;
-  };
-}
-
-export interface FooterCallToAction extends Struct.ComponentSchema {
-  collectionName: 'components_footer_call_to_actions';
-  info: {
-    displayName: 'Call to action';
-    icon: 'cursor';
-  };
-  attributes: {
-    titel: Schema.Attribute.String & Schema.Attribute.Required;
-    ondertitel: Schema.Attribute.Text & Schema.Attribute.Required;
-    knop: Schema.Attribute.Component<'buttons.primaire-knop', false>;
-  };
-}
-
-export interface ComponentsSpotifyMinuten extends Struct.ComponentSchema {
-  collectionName: 'components_components_spotify_minutens';
-  info: {
-    displayName: 'Spotify minuten';
-    icon: 'bulletList';
-  };
-  attributes: {
-    minuten: Schema.Attribute.String;
-    persoon: Schema.Attribute.String;
-  };
-}
-
-export interface ComponentsService extends Struct.ComponentSchema {
-  collectionName: 'components_components_services';
-  info: {
-    displayName: 'Service';
-    icon: 'bulletList';
-  };
-  attributes: {};
-}
-
-export interface ComponentsKoffieStatistiek extends Struct.ComponentSchema {
-  collectionName: 'components_components_koffie_statistieks';
-  info: {
-    displayName: 'Koffie statistiek';
-    icon: 'bulletList';
-  };
-  attributes: {
-    codios_startdatum: Schema.Attribute.DateTime & Schema.Attribute.Required;
-    koffie_per_dag: Schema.Attribute.Decimal;
-  };
-}
-
-export interface ComponentsHomescreenShowcase extends Struct.ComponentSchema {
-  collectionName: 'components_components_homescreen_showcases';
-  info: {
-    displayName: 'homescreen_showcase';
-    icon: 'bulletList';
-    description: '';
-  };
-  attributes: {
-    mobile: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    tablet: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    laptop: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-  };
-}
-
-export interface ComponentsClient extends Struct.ComponentSchema {
-  collectionName: 'components_components_clients';
-  info: {
-    displayName: 'client';
-    icon: 'bulletList';
-  };
-  attributes: {
-    naam: Schema.Attribute.String & Schema.Attribute.Required;
-    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'secties.tekst-met-titel-rechts': SectiesTekstMetTitelRechts;
+      'secties.tekst-met-titel-links': SectiesTekstMetTitelLinks;
+      'secties.tekst-met-foto-verticaal': SectiesTekstMetFotoVerticaal;
+      'secties.tekst-met-foto-horizontaal': SectiesTekstMetFotoHorizontaal;
+      'secties.team-sectie': SectiesTeamSectie;
+      'secties.hero-sectie': SectiesHeroSectie;
       'secties.foto-sectie': SectiesFotoSectie;
+      'secties.call-to-action-gecentreerd': SectiesCallToActionGecentreerd;
+      'footer.contact': FooterContact;
+      'footer.call-to-action': FooterCallToAction;
       'home.services-sectie': HomeServicesSectie;
       'home.leaderboard-sectie': HomeLeaderboardSectie;
       'home.hero-sectie': HomeHeroSectie;
       'home.clients-sectie': HomeClientsSectie;
       'home.cases-sectie': HomeCasesSectie;
+      'components.spotify-minuten': ComponentsSpotifyMinuten;
+      'components.service': ComponentsService;
+      'components.koffie-statistiek': ComponentsKoffieStatistiek;
+      'components.homescreen-showcase': ComponentsHomescreenShowcase;
+      'components.hobby': ComponentsHobby;
+      'components.client': ComponentsClient;
       'buttons.telefoonnummer': ButtonsTelefoonnummer;
       'buttons.tekstknop': ButtonsTekstknop;
       'buttons.social-media-button': ButtonsSocialMediaButton;
       'buttons.primaire-knop': ButtonsPrimaireKnop;
       'buttons.email': ButtonsEmail;
-      'footer.contact': FooterContact;
-      'footer.call-to-action': FooterCallToAction;
-      'components.spotify-minuten': ComponentsSpotifyMinuten;
-      'components.service': ComponentsService;
-      'components.koffie-statistiek': ComponentsKoffieStatistiek;
-      'components.homescreen-showcase': ComponentsHomescreenShowcase;
-      'components.client': ComponentsClient;
     }
   }
 }

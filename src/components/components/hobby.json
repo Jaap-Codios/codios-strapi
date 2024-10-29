@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_components_hobbies",
+  "info": {
+    "displayName": "Hobby",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tekst": {
+      "type": "string"
+    },
+    "illustratie": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

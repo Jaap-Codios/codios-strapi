@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_secties_call_to_action_gecentreerds",
+  "info": {
+    "displayName": "Call to action gecentreerd",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "tekst": {
+      "type": "string",
+      "required": true
+    },
+    "knop": {
+      "type": "component",
+      "repeatable": false,
+      "component": "buttons.primaire-knop"
+    }
+  }
+}

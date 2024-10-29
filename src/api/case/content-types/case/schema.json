@@ -23,6 +23,14 @@
       "type": "component",
       "repeatable": false,
       "component": "components.homescreen-showcase"
+    },
+    "achtergrond_foto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }
