@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_components_case_informaties",
+  "info": {
+    "displayName": "Case informatie",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "naam": {
+      "type": "string",
+      "required": true
+    },
+    "slogan": {
+      "type": "string",
+      "required": true
+    },
+    "hero_achtergrond_foto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "informatie_blok": {
+      "displayName": "Informatieblok",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.informatieblok",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "regex": "/[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&=]*)/gm",
+      "required": false
+    }
+  }
+}

@@ -15,21 +15,26 @@
     "naam": {
       "type": "string"
     },
-    "ondertitel": {
-      "type": "text"
-    },
-    "showcase": {
+    "homescreen_content": {
       "displayName": "homescreen_showcase",
       "type": "component",
       "repeatable": false,
       "component": "components.homescreen-showcase"
     },
-    "achtergrond_foto": {
-      "allowedTypes": [
-        "images"
+    "pagina_content": {
+      "type": "dynamiczone",
+      "components": [
+        "secties.tekst-met-titel-rechts",
+        "secties.tekst-met-titel-links",
+        "secties.tekst-met-foto-horizontaal"
       ],
-      "type": "media",
-      "multiple": false,
+      "required": true
+    },
+    "case_informatie": {
+      "displayName": "Case informatie",
+      "type": "component",
+      "repeatable": false,
+      "component": "components.case-informatie",
       "required": true
     }
   }

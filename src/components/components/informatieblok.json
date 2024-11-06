@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_components_informatiebloks",
+  "info": {
+    "displayName": "Informatieblok",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Omschrijving": {
+      "type": "string",
+      "required": true
+    },
+    "informatie": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

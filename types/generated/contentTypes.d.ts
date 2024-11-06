@@ -660,12 +660,22 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
   };
   attributes: {
     naam: Schema.Attribute.String;
-    ondertitel: Schema.Attribute.Text;
-    showcase: Schema.Attribute.Component<
+    homescreen_content: Schema.Attribute.Component<
       'components.homescreen-showcase',
       false
     >;
-    achtergrond_foto: Schema.Attribute.Media<'images'> &
+    pagina_content: Schema.Attribute.DynamicZone<
+      [
+        'secties.tekst-met-titel-rechts',
+        'secties.tekst-met-titel-links',
+        'secties.tekst-met-foto-horizontaal',
+      ]
+    > &
+      Schema.Attribute.Required;
+    case_informatie: Schema.Attribute.Component<
+      'components.case-informatie',
+      false
+    > &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

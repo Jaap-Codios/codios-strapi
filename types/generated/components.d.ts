@@ -242,78 +242,6 @@ export interface HomeCasesSectie extends Struct.ComponentSchema {
   };
 }
 
-export interface ComponentsSpotifyMinuten extends Struct.ComponentSchema {
-  collectionName: 'components_components_spotify_minutens';
-  info: {
-    displayName: 'Spotify minuten';
-    icon: 'bulletList';
-  };
-  attributes: {
-    minuten: Schema.Attribute.String;
-    persoon: Schema.Attribute.String;
-  };
-}
-
-export interface ComponentsService extends Struct.ComponentSchema {
-  collectionName: 'components_components_services';
-  info: {
-    displayName: 'Service';
-    icon: 'bulletList';
-  };
-  attributes: {};
-}
-
-export interface ComponentsKoffieStatistiek extends Struct.ComponentSchema {
-  collectionName: 'components_components_koffie_statistieks';
-  info: {
-    displayName: 'Koffie statistiek';
-    icon: 'bulletList';
-  };
-  attributes: {
-    codios_startdatum: Schema.Attribute.DateTime & Schema.Attribute.Required;
-    koffie_per_dag: Schema.Attribute.Decimal;
-  };
-}
-
-export interface ComponentsHomescreenShowcase extends Struct.ComponentSchema {
-  collectionName: 'components_components_homescreen_showcases';
-  info: {
-    displayName: 'homescreen_showcase';
-    icon: 'bulletList';
-    description: '';
-  };
-  attributes: {
-    mobile: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    tablet: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    laptop: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-  };
-}
-
-export interface ComponentsHobby extends Struct.ComponentSchema {
-  collectionName: 'components_components_hobbies';
-  info: {
-    displayName: 'Hobby';
-    icon: 'bulletList';
-    description: '';
-  };
-  attributes: {
-    tekst: Schema.Attribute.String;
-    illustratie: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-  };
-}
-
-export interface ComponentsClient extends Struct.ComponentSchema {
-  collectionName: 'components_components_clients';
-  info: {
-    displayName: 'client';
-    icon: 'bulletList';
-  };
-  attributes: {
-    naam: Schema.Attribute.String & Schema.Attribute.Required;
-    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-  };
-}
-
 export interface ButtonsTelefoonnummer extends Struct.ComponentSchema {
   collectionName: 'components_buttons_telefoonnummers';
   info: {
@@ -375,6 +303,112 @@ export interface ButtonsEmail extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsSpotifyMinuten extends Struct.ComponentSchema {
+  collectionName: 'components_components_spotify_minutens';
+  info: {
+    displayName: 'Spotify minuten';
+    icon: 'bulletList';
+  };
+  attributes: {
+    minuten: Schema.Attribute.String;
+    persoon: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentsService extends Struct.ComponentSchema {
+  collectionName: 'components_components_services';
+  info: {
+    displayName: 'Service';
+    icon: 'bulletList';
+  };
+  attributes: {};
+}
+
+export interface ComponentsKoffieStatistiek extends Struct.ComponentSchema {
+  collectionName: 'components_components_koffie_statistieks';
+  info: {
+    displayName: 'Koffie statistiek';
+    icon: 'bulletList';
+  };
+  attributes: {
+    codios_startdatum: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    koffie_per_dag: Schema.Attribute.Decimal;
+  };
+}
+
+export interface ComponentsInformatieblok extends Struct.ComponentSchema {
+  collectionName: 'components_components_informatiebloks';
+  info: {
+    displayName: 'Informatieblok';
+    icon: 'bulletList';
+  };
+  attributes: {
+    Omschrijving: Schema.Attribute.String & Schema.Attribute.Required;
+    informatie: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentsHomescreenShowcase extends Struct.ComponentSchema {
+  collectionName: 'components_components_homescreen_showcases';
+  info: {
+    displayName: 'Showcase homescreen content';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    mobile: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    tablet: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    laptop: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    titel: Schema.Attribute.String & Schema.Attribute.Required;
+    ondertitel: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentsHobby extends Struct.ComponentSchema {
+  collectionName: 'components_components_hobbies';
+  info: {
+    displayName: 'Hobby';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    tekst: Schema.Attribute.String;
+    illustratie: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentsClient extends Struct.ComponentSchema {
+  collectionName: 'components_components_clients';
+  info: {
+    displayName: 'client';
+    icon: 'bulletList';
+  };
+  attributes: {
+    naam: Schema.Attribute.String & Schema.Attribute.Required;
+    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentsCaseInformatie extends Struct.ComponentSchema {
+  collectionName: 'components_components_case_informaties';
+  info: {
+    displayName: 'Case informatie';
+    icon: 'bulletList';
+  };
+  attributes: {
+    naam: Schema.Attribute.String & Schema.Attribute.Required;
+    slogan: Schema.Attribute.String & Schema.Attribute.Required;
+    hero_achtergrond_foto: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    informatie_blok: Schema.Attribute.Component<
+      'components.informatieblok',
+      true
+    > &
+      Schema.Attribute.Required;
+    url: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -393,17 +427,19 @@ declare module '@strapi/strapi' {
       'home.hero-sectie': HomeHeroSectie;
       'home.clients-sectie': HomeClientsSectie;
       'home.cases-sectie': HomeCasesSectie;
-      'components.spotify-minuten': ComponentsSpotifyMinuten;
-      'components.service': ComponentsService;
-      'components.koffie-statistiek': ComponentsKoffieStatistiek;
-      'components.homescreen-showcase': ComponentsHomescreenShowcase;
-      'components.hobby': ComponentsHobby;
-      'components.client': ComponentsClient;
       'buttons.telefoonnummer': ButtonsTelefoonnummer;
       'buttons.tekstknop': ButtonsTekstknop;
       'buttons.social-media-button': ButtonsSocialMediaButton;
       'buttons.primaire-knop': ButtonsPrimaireKnop;
       'buttons.email': ButtonsEmail;
+      'components.spotify-minuten': ComponentsSpotifyMinuten;
+      'components.service': ComponentsService;
+      'components.koffie-statistiek': ComponentsKoffieStatistiek;
+      'components.informatieblok': ComponentsInformatieblok;
+      'components.homescreen-showcase': ComponentsHomescreenShowcase;
+      'components.hobby': ComponentsHobby;
+      'components.client': ComponentsClient;
+      'components.case-informatie': ComponentsCaseInformatie;
     }
   }
 }

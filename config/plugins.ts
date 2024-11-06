@@ -12,22 +12,41 @@ export default ({ env }) => ({
     },
     navigation: {
         enabled: true,
-    }
-    
-    // upload: {
-    //     config: {
-    //         provider: 'cloudinary',
-    //         providerOptions: {
-    //             cloud_name: env('CLOUDINARY_NAME'),
-    //             api_key: env('CLOUDINARY_KEY'),
-    //             api_secret: env('CLOUDINARY_SECRET'),
-    //         },
-    //         actionOptions: {
-    //             upload: {},
-    //             uploadStream: {},
-    //             delete: {},
-    //         },
-    //     },
-    // },
+    },
+    ezforms:{
+        config:{
+          captchaProvider: {
+            name: 'recaptcha',
+          },
+          config: {
+            secretKey: '6LcYJVoqAAAAACjl8lEm_7LXQHeqevzryZQpl3sM',
+            minimumScore: 0.5
+          },
+          notificationProviders: []
+        }
+    },
+    upload: {
+      config: {
+        provider: 'aws-s3',
+        providerOptions: {
+          s3Options: {
+            credentials: {
+              accessKeyId: env('AWS_ACCESS_KEY_ID'),
+              secretAccessKey: env('AWS_ACCESS_SECRET'),
+            },
+            region: env('AWS_REGION'),
+            params: {
+              ACL: 'private',
+              Bucket: env('AWS_BUCKET'),
+            },
+          },
+        },
+        actionOptions: {
+          upload: {},
+          uploadStream: {},
+          delete: {},
+        },
+      },
+    },
 });
 
