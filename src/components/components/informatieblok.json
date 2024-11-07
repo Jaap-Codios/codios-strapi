@@ -2,11 +2,12 @@
   "collectionName": "components_components_informatiebloks",
   "info": {
     "displayName": "Informatieblok",
-    "icon": "bulletList"
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Omschrijving": {
+    "omschrijving": {
       "type": "string",
       "required": true
     },

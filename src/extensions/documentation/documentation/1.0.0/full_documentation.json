@@ -1,5 +1,4 @@
 {
-  "openapi": "3.0.0",
   "info": {
     "version": "1.0.0",
     "title": "DOCUMENTATION",
@@ -14,8 +13,9 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-11-07T09:36:12.151Z"
+    "x-generation-date": "2024-11-07T14:31:02.100Z"
   },
+  "openapi": "3.0.0",
   "x-strapi-config": {
     "plugins": [
       "upload",
@@ -4631,7 +4631,7 @@
         "properties": {
           "data": {
             "required": [
-              "pagina_content",
+              "pagina_secties",
               "case_informatie"
             ],
             "type": "object",
@@ -4639,7 +4639,7 @@
               "homescreen_content": {
                 "$ref": "#/components/schemas/ComponentsHomescreenShowcaseComponent"
               },
-              "pagina_content": {
+              "pagina_secties": {
                 "type": "array",
                 "items": {
                   "anyOf": [
@@ -4729,7 +4729,7 @@
       "Case": {
         "type": "object",
         "required": [
-          "pagina_content",
+          "pagina_secties",
           "case_informatie"
         ],
         "properties": {
@@ -4742,7 +4742,7 @@
           "homescreen_content": {
             "$ref": "#/components/schemas/ComponentsHomescreenShowcaseComponent"
           },
-          "pagina_content": {
+          "pagina_secties": {
             "type": "array",
             "items": {
               "anyOf": [
@@ -4824,7 +4824,7 @@
                 "homescreen_content": {
                   "$ref": "#/components/schemas/ComponentsHomescreenShowcaseComponent"
                 },
-                "pagina_content": {
+                "pagina_secties": {
                   "type": "array",
                   "items": {
                     "anyOf": [
@@ -6259,7 +6259,7 @@
           "id": {
             "type": "number"
           },
-          "Omschrijving": {
+          "omschrijving": {
             "type": "string"
           },
           "informatie": {
@@ -8013,7 +8013,7 @@
           "id": {
             "type": "number"
           },
-          "minuten": {
+          "minuten_per_dag": {
             "type": "string"
           },
           "persoon": {
@@ -9004,7 +9004,7 @@
                 "homescreen_content": {
                   "$ref": "#/components/schemas/ComponentsHomescreenShowcaseComponent"
                 },
-                "pagina_content": {
+                "pagina_secties": {
                   "type": "array",
                   "items": {
                     "anyOf": [

@@ -18,7 +18,7 @@
       "repeatable": false,
       "component": "components.homescreen-showcase"
     },
-    "pagina_content": {
+    "pagina_secties": {
       "type": "dynamiczone",
       "components": [
         "secties.tekst-met-titel-rechts",
