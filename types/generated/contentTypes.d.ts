@@ -659,7 +659,6 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    naam: Schema.Attribute.String;
     homescreen_content: Schema.Attribute.Component<
       'components.homescreen-showcase',
       false
@@ -669,6 +668,7 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
         'secties.tekst-met-titel-rechts',
         'secties.tekst-met-titel-links',
         'secties.tekst-met-foto-horizontaal',
+        'secties.dubbele-foto-sectie',
       ]
     > &
       Schema.Attribute.Required;

@@ -91,6 +91,19 @@ export interface SectiesFotoSectie extends Struct.ComponentSchema {
   };
 }
 
+export interface SectiesDubbeleFotoSectie extends Struct.ComponentSchema {
+  collectionName: 'components_secties_dubbele_foto_secties';
+  info: {
+    displayName: 'Dubbele foto sectie';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    foto_1: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    foto_2: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
 export interface SectiesCallToActionGecentreerd extends Struct.ComponentSchema {
   collectionName: 'components_secties_call_to_action_gecentreerds';
   info: {
@@ -99,35 +112,6 @@ export interface SectiesCallToActionGecentreerd extends Struct.ComponentSchema {
   };
   attributes: {
     tekst: Schema.Attribute.String & Schema.Attribute.Required;
-    knop: Schema.Attribute.Component<'buttons.primaire-knop', false>;
-  };
-}
-
-export interface FooterContact extends Struct.ComponentSchema {
-  collectionName: 'components_footer_contacts';
-  info: {
-    displayName: 'contact';
-    icon: 'envelop';
-    description: '';
-  };
-  attributes: {
-    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    telefoonnummers: Schema.Attribute.Component<'buttons.telefoonnummer', true>;
-    socials: Schema.Attribute.Component<'buttons.social-media-button', true>;
-    emailaddressen: Schema.Attribute.Component<'buttons.email', true>;
-    adres: Schema.Attribute.Text;
-  };
-}
-
-export interface FooterCallToAction extends Struct.ComponentSchema {
-  collectionName: 'components_footer_call_to_actions';
-  info: {
-    displayName: 'Call to action';
-    icon: 'cursor';
-  };
-  attributes: {
-    titel: Schema.Attribute.String & Schema.Attribute.Required;
-    ondertitel: Schema.Attribute.Text & Schema.Attribute.Required;
     knop: Schema.Attribute.Component<'buttons.primaire-knop', false>;
   };
 }
@@ -242,64 +226,32 @@ export interface HomeCasesSectie extends Struct.ComponentSchema {
   };
 }
 
-export interface ButtonsTelefoonnummer extends Struct.ComponentSchema {
-  collectionName: 'components_buttons_telefoonnummers';
+export interface FooterContact extends Struct.ComponentSchema {
+  collectionName: 'components_footer_contacts';
   info: {
-    displayName: 'Telefoonnummer';
-    icon: 'phone';
+    displayName: 'contact';
+    icon: 'envelop';
     description: '';
   };
   attributes: {
-    label: Schema.Attribute.String & Schema.Attribute.Required;
-    telefoonnummer: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface ButtonsTekstknop extends Struct.ComponentSchema {
-  collectionName: 'components_buttons_tekstknops';
-  info: {
-    displayName: 'Tekstknop';
-    icon: 'cursor';
-  };
-  attributes: {
-    label: Schema.Attribute.String & Schema.Attribute.Required;
-    url: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface ButtonsSocialMediaButton extends Struct.ComponentSchema {
-  collectionName: 'components_buttons_social_media_buttons';
-  info: {
-    displayName: 'Social media button';
-    icon: 'paperPlane';
-  };
-  attributes: {
     logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    url: Schema.Attribute.String & Schema.Attribute.Required;
+    telefoonnummers: Schema.Attribute.Component<'buttons.telefoonnummer', true>;
+    socials: Schema.Attribute.Component<'buttons.social-media-button', true>;
+    emailaddressen: Schema.Attribute.Component<'buttons.email', true>;
+    adres: Schema.Attribute.Text;
   };
 }
 
-export interface ButtonsPrimaireKnop extends Struct.ComponentSchema {
-  collectionName: 'components_buttons_primaire_knops';
+export interface FooterCallToAction extends Struct.ComponentSchema {
+  collectionName: 'components_footer_call_to_actions';
   info: {
-    displayName: 'Primaire knop';
+    displayName: 'Call to action';
     icon: 'cursor';
   };
   attributes: {
-    label: Schema.Attribute.String & Schema.Attribute.Required;
-    url: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface ButtonsEmail extends Struct.ComponentSchema {
-  collectionName: 'components_buttons_emails';
-  info: {
-    displayName: 'Email';
-    icon: 'envelop';
-  };
-  attributes: {
-    label: Schema.Attribute.String & Schema.Attribute.Required;
-    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    titel: Schema.Attribute.String & Schema.Attribute.Required;
+    ondertitel: Schema.Attribute.Text & Schema.Attribute.Required;
+    knop: Schema.Attribute.Component<'buttons.primaire-knop', false>;
   };
 }
 
@@ -394,6 +346,7 @@ export interface ComponentsCaseInformatie extends Struct.ComponentSchema {
   info: {
     displayName: 'Case informatie';
     icon: 'bulletList';
+    description: '';
   };
   attributes: {
     naam: Schema.Attribute.String & Schema.Attribute.Required;
@@ -406,6 +359,68 @@ export interface ComponentsCaseInformatie extends Struct.ComponentSchema {
     > &
       Schema.Attribute.Required;
     url: Schema.Attribute.String;
+    ondertitel: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface ButtonsTelefoonnummer extends Struct.ComponentSchema {
+  collectionName: 'components_buttons_telefoonnummers';
+  info: {
+    displayName: 'Telefoonnummer';
+    icon: 'phone';
+    description: '';
+  };
+  attributes: {
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    telefoonnummer: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ButtonsTekstknop extends Struct.ComponentSchema {
+  collectionName: 'components_buttons_tekstknops';
+  info: {
+    displayName: 'Tekstknop';
+    icon: 'cursor';
+  };
+  attributes: {
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ButtonsSocialMediaButton extends Struct.ComponentSchema {
+  collectionName: 'components_buttons_social_media_buttons';
+  info: {
+    displayName: 'Social media button';
+    icon: 'paperPlane';
+  };
+  attributes: {
+    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ButtonsPrimaireKnop extends Struct.ComponentSchema {
+  collectionName: 'components_buttons_primaire_knops';
+  info: {
+    displayName: 'Primaire knop';
+    icon: 'cursor';
+  };
+  attributes: {
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ButtonsEmail extends Struct.ComponentSchema {
+  collectionName: 'components_buttons_emails';
+  info: {
+    displayName: 'Email';
+    icon: 'envelop';
+  };
+  attributes: {
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
   };
 }
 
@@ -419,19 +434,15 @@ declare module '@strapi/strapi' {
       'secties.team-sectie': SectiesTeamSectie;
       'secties.hero-sectie': SectiesHeroSectie;
       'secties.foto-sectie': SectiesFotoSectie;
+      'secties.dubbele-foto-sectie': SectiesDubbeleFotoSectie;
       'secties.call-to-action-gecentreerd': SectiesCallToActionGecentreerd;
-      'footer.contact': FooterContact;
-      'footer.call-to-action': FooterCallToAction;
       'home.services-sectie': HomeServicesSectie;
       'home.leaderboard-sectie': HomeLeaderboardSectie;
       'home.hero-sectie': HomeHeroSectie;
       'home.clients-sectie': HomeClientsSectie;
       'home.cases-sectie': HomeCasesSectie;
-      'buttons.telefoonnummer': ButtonsTelefoonnummer;
-      'buttons.tekstknop': ButtonsTekstknop;
-      'buttons.social-media-button': ButtonsSocialMediaButton;
-      'buttons.primaire-knop': ButtonsPrimaireKnop;
-      'buttons.email': ButtonsEmail;
+      'footer.contact': FooterContact;
+      'footer.call-to-action': FooterCallToAction;
       'components.spotify-minuten': ComponentsSpotifyMinuten;
       'components.service': ComponentsService;
       'components.koffie-statistiek': ComponentsKoffieStatistiek;
@@ -440,6 +451,11 @@ declare module '@strapi/strapi' {
       'components.hobby': ComponentsHobby;
       'components.client': ComponentsClient;
       'components.case-informatie': ComponentsCaseInformatie;
+      'buttons.telefoonnummer': ButtonsTelefoonnummer;
+      'buttons.tekstknop': ButtonsTekstknop;
+      'buttons.social-media-button': ButtonsSocialMediaButton;
+      'buttons.primaire-knop': ButtonsPrimaireKnop;
+      'buttons.email': ButtonsEmail;
     }
   }
 }

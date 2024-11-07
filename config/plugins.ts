@@ -13,6 +13,9 @@ export default ({ env }) => ({
     navigation: {
         enabled: true,
     },
+    documentation: {
+      enabled: true,
+    },
     ezforms:{
         config:{
           captchaProvider: {

@@ -12,9 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "naam": {
-      "type": "string"
-    },
     "homescreen_content": {
       "displayName": "homescreen_showcase",
       "type": "component",
@@ -26,7 +23,8 @@
       "components": [
         "secties.tekst-met-titel-rechts",
         "secties.tekst-met-titel-links",
-        "secties.tekst-met-foto-horizontaal"
+        "secties.tekst-met-foto-horizontaal",
+        "secties.dubbele-foto-sectie"
       ],
       "required": true
     },
