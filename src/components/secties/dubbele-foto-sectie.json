@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_secties_dubbele_foto_secties",
+  "info": {
+    "displayName": "Dubbele foto sectie",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "foto_1": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "foto_2": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

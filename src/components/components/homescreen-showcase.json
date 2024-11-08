@@ -1,7 +1,7 @@
 {
   "collectionName": "components_components_homescreen_showcases",
   "info": {
-    "displayName": "homescreen_showcase",
+    "displayName": "Showcase homescreen content",
     "icon": "bulletList",
     "description": ""
   },
@@ -30,6 +30,14 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "titel": {
+      "type": "string",
+      "required": true
+    },
+    "ondertitel": {
+      "type": "text",
+      "required": true
     }
   }
 }

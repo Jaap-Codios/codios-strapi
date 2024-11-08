@@ -2,11 +2,12 @@
   "collectionName": "components_components_spotify_minutens",
   "info": {
     "displayName": "Spotify minuten",
-    "icon": "bulletList"
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "minuten": {
+    "minuten_per_dag": {
       "type": "string"
     },
     "persoon": {
