@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "service_paginas",
+  "info": {
+    "singularName": "service-pagina",
+    "pluralName": "service-paginas",
+    "displayName": "Service Pagina"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titel": {
+      "type": "string",
+      "default": "Services",
+      "required": true
+    },
+    "achtergrond_foto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service"
+    }
+  }
+}
