@@ -4,7 +4,8 @@
   "info": {
     "singularName": "service",
     "pluralName": "services",
-    "displayName": "service"
+    "displayName": "service",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,19 +17,26 @@
       "required": true
     },
     "achtergrond_foto": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "content": {
       "type": "dynamiczone",
       "components": [
-        "secties.foto-sectie"
+        "secties.tekst-met-titel-rechts",
+        "secties.tekst-met-titel-links",
+        "secties.dubbele-foto-sectie",
+        "secties.tekst-met-foto-horizontaal"
       ],
       "min": 1
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "naam"
     }
   }
 }

@@ -590,9 +590,43 @@ export interface ApiPortfolioPortfolio extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiServicePaginaServicePagina extends Struct.SingleTypeSchema {
+  collectionName: 'service_paginas';
+  info: {
+    displayName: 'Service Pagina';
+    pluralName: 'service-paginas';
+    singularName: 'service-pagina';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    achtergrond_foto: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-pagina.service-pagina'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    services: Schema.Attribute.Relation<'oneToMany', 'api::service.service'>;
+    titel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Services'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
+    description: '';
     displayName: 'service';
     pluralName: 'services';
     singularName: 'service';
@@ -603,7 +637,14 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
   attributes: {
     achtergrond_foto: Schema.Attribute.Media<'images'> &
       Schema.Attribute.Required;
-    content: Schema.Attribute.DynamicZone<['secties.foto-sectie']> &
+    content: Schema.Attribute.DynamicZone<
+      [
+        'secties.tekst-met-titel-rechts',
+        'secties.tekst-met-titel-links',
+        'secties.dubbele-foto-sectie',
+        'secties.tekst-met-foto-horizontaal',
+      ]
+    > &
       Schema.Attribute.SetMinMax<
         {
           min: 1;
@@ -621,6 +662,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     naam: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'naam'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1335,6 +1377,7 @@ declare module '@strapi/strapi' {
       'api::home.home': ApiHomeHome;
       'api::over-ons.over-ons': ApiOverOnsOverOns;
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
+      'api::service-pagina.service-pagina': ApiServicePaginaServicePagina;
       'api::service.service': ApiServiceService;
       'api::team-lid.team-lid': ApiTeamLidTeamLid;
       'plugin::content-releases.release': PluginContentReleasesRelease;
