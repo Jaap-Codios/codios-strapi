@@ -13,7 +13,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-11-11T14:51:55.021Z"
+    "x-generation-date": "2024-11-12T17:45:38.200Z"
   },
   "openapi": "3.0.0",
   "x-strapi-config": {
@@ -4993,6 +4993,9 @@
               "case_informatie": {
                 "$ref": "#/components/schemas/ComponentsCaseInformatieComponent"
               },
+              "slug": {
+                "type": "string"
+              },
               "locale": {
                 "type": "string"
               },
@@ -5096,6 +5099,9 @@
           "case_informatie": {
             "$ref": "#/components/schemas/ComponentsCaseInformatieComponent"
           },
+          "slug": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -5177,6 +5183,9 @@
                 },
                 "case_informatie": {
                   "$ref": "#/components/schemas/ComponentsCaseInformatieComponent"
+                },
+                "slug": {
+                  "type": "string"
                 },
                 "createdAt": {
                   "type": "string",
@@ -9211,6 +9220,9 @@
                 },
                 "case_informatie": {
                   "$ref": "#/components/schemas/ComponentsCaseInformatieComponent"
+                },
+                "slug": {
+                  "type": "string"
                 },
                 "createdAt": {
                   "type": "string",

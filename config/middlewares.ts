@@ -30,7 +30,7 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:8080', 'https://your-frontend-domain.com'],
+      origin: ['http://localhost:8080', 'https://codios.nl', 'https://cms.codios.nl'],
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
       headers: ['Content-Type', 'Authorization'],
       credentials: true,
