@@ -25,17 +25,14 @@ module.exports = {
 
 // Helper function to calculate total cups of coffee
 function calculateTotalCups(startDateString: string, cupsPerDay: number): number {
+  console.log
   const startDate = new Date(startDateString);
   const currentDate = new Date();
   const oneDay = 24 * 60 * 60 * 1000;
-  let totalCups = 0;
 
-  for (let date = startDate; date <= currentDate; date = new Date(date.getTime() + oneDay)) {
-    const dayOfWeek = date.getDay();
-    if (dayOfWeek >= 1 && dayOfWeek <= 5) {
-      totalCups += cupsPerDay;
-    }
-  }
+  const diffInDays = Math.floor((currentDate.getTime() - startDate.getTime()) / oneDay);
+
+  const totalCups = diffInDays * cupsPerDay;
 
   return totalCups;
 }

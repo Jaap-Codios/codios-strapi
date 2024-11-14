@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_secties_tekst_secties",
+  "info": {
+    "displayName": "Tekst sectie",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "blocks"
+    }
+  }
+}
