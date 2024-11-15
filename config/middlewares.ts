@@ -30,7 +30,17 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:8080', 'https://www.codios.nl', 'https://codios.nl', 'https://cms.codios.nl'],
+      origin: (origin: string) => {
+        // allow request from localhost and codios and from subdomains of vercel
+        if (!origin) return false;
+        const allowedOrigins = [
+          'http://localhost:8080',
+          'https://www.codios.nl',
+          'https://codios.nl',
+          'https://cms.codios.nl',
+        ];
+        return allowedOrigins.includes(origin) || origin.endsWith('.vercel.app');
+      },
       headers: '*',
       credentials: true,
     },
