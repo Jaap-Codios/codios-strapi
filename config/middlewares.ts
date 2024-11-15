@@ -30,8 +30,26 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      enabled: true,
-      origin: ['http://localhost:8080', 'https://www.codios.nl', 'https://codios.nl', 'https://cms.codios.nl'],
+      origin: (ctx) => {
+        const origin = ctx.request.header.origin;
+        const allowedOrigins = [
+          'http://localhost:8080',
+          'https://www.codios.nl',
+          'https://codios.nl',
+          'https://cms.codios.nl',
+        ];
+
+        const allowedRegexOrigins = [/^https:\/\/.*\.vercel\.app$/]; // Vercel-subdomeinen toestaan
+
+        // Controleer of origin in statische lijst staat of matcht met een regex
+        if (
+          allowedOrigins.includes(origin) ||
+          allowedRegexOrigins.some((regex) => regex.test(origin))
+        ) {
+          return origin;
+        }
+        return false; // Blokkeer niet-goedgekeurde origins
+      },
       headers: '*',
       credentials: true,
     },
