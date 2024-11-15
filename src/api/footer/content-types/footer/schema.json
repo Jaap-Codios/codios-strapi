@@ -25,10 +25,9 @@
       "component": "footer.contact"
     },
     "linkjes": {
-      "type": "dynamiczone",
-      "components": [
-        "buttons.tekstknop"
-      ]
+      "type": "component",
+      "repeatable": true,
+      "component": "buttons.tekstknop"
     }
   }
 }
