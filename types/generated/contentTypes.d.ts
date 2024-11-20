@@ -386,6 +386,8 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
       false
     > &
       Schema.Attribute.Required;
+    case_omschrijving: Schema.Attribute.Text;
+    case_url: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -396,6 +398,7 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::case.case'> &
       Schema.Attribute.Private;
+    naam: Schema.Attribute.String & Schema.Attribute.Required;
     pagina_secties: Schema.Attribute.DynamicZone<
       [
         'secties.tekst-met-titel-rechts',
@@ -406,6 +409,7 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    slogan: Schema.Attribute.Text;
     slug: Schema.Attribute.UID;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -426,14 +430,15 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
   };
   attributes: {
     adres: Schema.Attribute.Text;
-    btw_nummer: Schema.Attribute.String & Schema.Attribute.Required;
+    btw_nummer: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     email: Schema.Attribute.Component<'buttons.email', false>;
     hero: Schema.Attribute.Component<'secties.hero-sectie', false> &
       Schema.Attribute.Required;
-    iban: Schema.Attribute.Text & Schema.Attribute.Required;
+    iban: Schema.Attribute.String;
+    kvk: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -442,9 +447,6 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     telefoonnummer: Schema.Attribute.Component<'buttons.telefoonnummer', false>;
-    titel: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'Contact'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -743,7 +745,7 @@ export interface ApiTeamLidTeamLid extends Struct.CollectionTypeSchema {
       'api::team-lid.team-lid'
     > &
       Schema.Attribute.Private;
-    Naam: Schema.Attribute.String & Schema.Attribute.Required;
+    naam: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

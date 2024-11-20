@@ -7,14 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "naam": {
-      "type": "string",
-      "required": true
-    },
-    "slogan": {
-      "type": "string",
-      "required": true
-    },
     "hero_achtergrond_foto": {
       "type": "media",
       "multiple": false,
@@ -28,15 +20,6 @@
       "type": "component",
       "repeatable": true,
       "component": "components.informatieblok",
-      "required": true
-    },
-    "url": {
-      "type": "string",
-      "regex": "[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&=]*)",
-      "required": false
-    },
-    "ondertitel": {
-      "type": "text",
       "required": true
     }
   }
