@@ -13,7 +13,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-11-15T09:00:19.928Z"
+    "x-generation-date": "2024-11-20T10:20:36.895Z"
   },
   "openapi": "3.0.0",
   "x-strapi-config": {
@@ -5461,7 +5461,9 @@
           "data": {
             "required": [
               "pagina_secties",
-              "case_informatie"
+              "case_informatie",
+              "naam",
+              "case_url"
             ],
             "type": "object",
             "properties": {
@@ -5500,6 +5502,18 @@
                 "$ref": "#/components/schemas/ComponentsCaseInformatieComponent"
               },
               "slug": {
+                "type": "string"
+              },
+              "naam": {
+                "type": "string"
+              },
+              "slogan": {
+                "type": "string"
+              },
+              "case_url": {
+                "type": "string"
+              },
+              "case_omschrijving": {
                 "type": "string"
               },
               "locale": {
@@ -5562,7 +5576,9 @@
         "type": "object",
         "required": [
           "pagina_secties",
-          "case_informatie"
+          "case_informatie",
+          "naam",
+          "case_url"
         ],
         "properties": {
           "id": {
@@ -5606,6 +5622,18 @@
             "$ref": "#/components/schemas/ComponentsCaseInformatieComponent"
           },
           "slug": {
+            "type": "string"
+          },
+          "naam": {
+            "type": "string"
+          },
+          "slogan": {
+            "type": "string"
+          },
+          "case_url": {
+            "type": "string"
+          },
+          "case_omschrijving": {
             "type": "string"
           },
           "createdAt": {
@@ -5691,6 +5719,18 @@
                   "$ref": "#/components/schemas/ComponentsCaseInformatieComponent"
                 },
                 "slug": {
+                  "type": "string"
+                },
+                "naam": {
+                  "type": "string"
+                },
+                "slogan": {
+                  "type": "string"
+                },
+                "case_url": {
+                  "type": "string"
+                },
+                "case_omschrijving": {
                   "type": "string"
                 },
                 "createdAt": {
@@ -7111,12 +7151,6 @@
           "id": {
             "type": "number"
           },
-          "naam": {
-            "type": "string"
-          },
-          "slogan": {
-            "type": "string"
-          },
           "hero_achtergrond_foto": {
             "type": "object",
             "properties": {
@@ -7251,12 +7285,6 @@
             "items": {
               "$ref": "#/components/schemas/ComponentsInformatieblokComponent"
             }
-          },
-          "url": {
-            "type": "string"
-          },
-          "ondertitel": {
-            "type": "string"
           }
         }
       },
@@ -7268,9 +7296,6 @@
         "properties": {
           "data": {
             "required": [
-              "btw_nummer",
-              "iban",
-              "titel",
               "hero"
             ],
             "type": "object",
@@ -7287,14 +7312,14 @@
               "btw_nummer": {
                 "type": "string"
               },
-              "iban": {
-                "type": "string"
-              },
-              "titel": {
+              "kvk": {
                 "type": "string"
               },
               "hero": {
                 "$ref": "#/components/schemas/SectiesHeroSectieComponent"
+              },
+              "iban": {
+                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -7355,9 +7380,6 @@
       "Contact": {
         "type": "object",
         "required": [
-          "btw_nummer",
-          "iban",
-          "titel",
           "hero"
         ],
         "properties": {
@@ -7379,14 +7401,14 @@
           "btw_nummer": {
             "type": "string"
           },
-          "iban": {
-            "type": "string"
-          },
-          "titel": {
+          "kvk": {
             "type": "string"
           },
           "hero": {
             "$ref": "#/components/schemas/SectiesHeroSectieComponent"
+          },
+          "iban": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -7448,14 +7470,14 @@
                 "btw_nummer": {
                   "type": "string"
                 },
-                "iban": {
-                  "type": "string"
-                },
-                "titel": {
+                "kvk": {
                   "type": "string"
                 },
                 "hero": {
                   "$ref": "#/components/schemas/SectiesHeroSectieComponent"
+                },
+                "iban": {
+                  "type": "string"
                 },
                 "createdAt": {
                   "type": "string",
@@ -10160,6 +10182,18 @@
                 "slug": {
                   "type": "string"
                 },
+                "naam": {
+                  "type": "string"
+                },
+                "slogan": {
+                  "type": "string"
+                },
+                "case_url": {
+                  "type": "string"
+                },
+                "case_omschrijving": {
+                  "type": "string"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -12594,14 +12628,14 @@
         "properties": {
           "data": {
             "required": [
-              "Naam",
+              "naam",
               "functie",
               "favoriete_nummer",
               "foto"
             ],
             "type": "object",
             "properties": {
-              "Naam": {
+              "naam": {
                 "type": "string"
               },
               "functie": {
@@ -12686,7 +12720,7 @@
       "TeamLid": {
         "type": "object",
         "required": [
-          "Naam",
+          "naam",
           "functie",
           "favoriete_nummer",
           "foto"
@@ -12698,7 +12732,7 @@
           "documentId": {
             "type": "string"
           },
-          "Naam": {
+          "naam": {
             "type": "string"
           },
           "functie": {
@@ -12890,7 +12924,7 @@
                 "documentId": {
                   "type": "string"
                 },
-                "Naam": {
+                "naam": {
                   "type": "string"
                 },
                 "functie": {
