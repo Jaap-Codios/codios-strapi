@@ -24,7 +24,8 @@
         "secties.tekst-met-titel-rechts",
         "secties.tekst-met-titel-links",
         "secties.tekst-met-foto-horizontaal",
-        "secties.dubbele-foto-sectie"
+        "secties.dubbele-foto-sectie",
+        "secties.grote-foto-sectie"
       ],
       "required": true
     },

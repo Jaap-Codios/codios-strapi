@@ -7,7 +7,9 @@ module.exports = {
         }
 
         // Generate slug from the "naam" field
-        event.params.data.slug = slugify(event.params.data.titel);
+        event.params.data.slug = slugify(event.params.data.titel, {
+            lower: true,
+        });
     },
 
     async beforeUpdate(event: { params: { data: { titel?: string; slug?: string } } }) {
@@ -16,6 +18,8 @@ module.exports = {
         }
 
         // Generate slug from the "naam" field
-        event.params.data.slug = slugify(event.params.data.titel);
+        event.params.data.slug = slugify(event.params.data.titel, {
+            lower: true,
+        });
     },
 };

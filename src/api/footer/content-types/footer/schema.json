@@ -25,9 +25,9 @@
       "component": "footer.contact"
     },
     "linkjes": {
-      "type": "component",
-      "repeatable": true,
-      "component": "buttons.tekstknop"
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::content-pagina.content-pagina"
     }
   }
 }
