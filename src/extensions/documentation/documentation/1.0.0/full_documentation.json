@@ -13,7 +13,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-11-20T13:24:22.849Z"
+    "x-generation-date": "2024-11-22T14:23:05.534Z"
   },
   "openapi": "3.0.0",
   "x-strapi-config": {
@@ -5485,6 +5485,9 @@
                     },
                     {
                       "$ref": "#/components/schemas/SectiesDubbeleFotoSectieComponent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/SectiesGroteFotoSectieComponent"
                     }
                   ]
                 },
@@ -5494,7 +5497,8 @@
                     "secties.tekst-met-titel-rechts": "#/components/schemas/SectiesTekstMetTitelRechtsComponent",
                     "secties.tekst-met-titel-links": "#/components/schemas/SectiesTekstMetTitelLinksComponent",
                     "secties.tekst-met-foto-horizontaal": "#/components/schemas/SectiesTekstMetFotoHorizontaalComponent",
-                    "secties.dubbele-foto-sectie": "#/components/schemas/SectiesDubbeleFotoSectieComponent"
+                    "secties.dubbele-foto-sectie": "#/components/schemas/SectiesDubbeleFotoSectieComponent",
+                    "secties.grote-foto-sectie": "#/components/schemas/SectiesGroteFotoSectieComponent"
                   }
                 }
               },
@@ -5605,6 +5609,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/SectiesDubbeleFotoSectieComponent"
+                },
+                {
+                  "$ref": "#/components/schemas/SectiesGroteFotoSectieComponent"
                 }
               ]
             },
@@ -5614,7 +5621,8 @@
                 "secties.tekst-met-titel-rechts": "#/components/schemas/SectiesTekstMetTitelRechtsComponent",
                 "secties.tekst-met-titel-links": "#/components/schemas/SectiesTekstMetTitelLinksComponent",
                 "secties.tekst-met-foto-horizontaal": "#/components/schemas/SectiesTekstMetFotoHorizontaalComponent",
-                "secties.dubbele-foto-sectie": "#/components/schemas/SectiesDubbeleFotoSectieComponent"
+                "secties.dubbele-foto-sectie": "#/components/schemas/SectiesDubbeleFotoSectieComponent",
+                "secties.grote-foto-sectie": "#/components/schemas/SectiesGroteFotoSectieComponent"
               }
             }
           },
@@ -5702,6 +5710,9 @@
                       },
                       {
                         "$ref": "#/components/schemas/SectiesDubbeleFotoSectieComponent"
+                      },
+                      {
+                        "$ref": "#/components/schemas/SectiesGroteFotoSectieComponent"
                       }
                     ]
                   },
@@ -5711,7 +5722,8 @@
                       "secties.tekst-met-titel-rechts": "#/components/schemas/SectiesTekstMetTitelRechtsComponent",
                       "secties.tekst-met-titel-links": "#/components/schemas/SectiesTekstMetTitelLinksComponent",
                       "secties.tekst-met-foto-horizontaal": "#/components/schemas/SectiesTekstMetFotoHorizontaalComponent",
-                      "secties.dubbele-foto-sectie": "#/components/schemas/SectiesDubbeleFotoSectieComponent"
+                      "secties.dubbele-foto-sectie": "#/components/schemas/SectiesDubbeleFotoSectieComponent",
+                      "secties.grote-foto-sectie": "#/components/schemas/SectiesGroteFotoSectieComponent"
                     }
                   }
                 },
@@ -7131,6 +7143,149 @@
           }
         }
       },
+      "SectiesGroteFotoSectieComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "__component": {
+            "type": "string",
+            "enum": [
+              "secties.grote-foto-sectie"
+            ]
+          },
+          "foto": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "documentId": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {},
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number",
+                "format": "float"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {},
+              "related": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "folder": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
+              },
+              "folderPath": {
+                "type": "string"
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "publishedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "createdBy": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
+              },
+              "updatedBy": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "documentId": {
+                    "type": "string"
+                  }
+                }
+              },
+              "locale": {
+                "type": "string"
+              },
+              "localizations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "ComponentsInformatieblokComponent": {
         "type": "object",
         "properties": {
@@ -8227,7 +8382,15 @@
               "linkjes": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/ButtonsTekstknopComponent"
+                  "oneOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
+                  "example": "string or id"
                 }
               },
               "locale": {
@@ -8304,7 +8467,100 @@
           "linkjes": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ButtonsTekstknopComponent"
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "documentId": {
+                  "type": "string"
+                },
+                "titel": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/SectiesTekstSectieComponent"
+                      },
+                      {
+                        "$ref": "#/components/schemas/SectiesDubbeleFotoSectieComponent"
+                      },
+                      {
+                        "$ref": "#/components/schemas/SectiesFotoSectieComponent"
+                      },
+                      {
+                        "$ref": "#/components/schemas/SectiesCallToActionGecentreerdComponent"
+                      }
+                    ]
+                  },
+                  "discriminator": {
+                    "propertyName": "__component",
+                    "mapping": {
+                      "secties.tekst-sectie": "#/components/schemas/SectiesTekstSectieComponent",
+                      "secties.dubbele-foto-sectie": "#/components/schemas/SectiesDubbeleFotoSectieComponent",
+                      "secties.foto-sectie": "#/components/schemas/SectiesFotoSectieComponent",
+                      "secties.call-to-action-gecentreerd": "#/components/schemas/SectiesCallToActionGecentreerdComponent"
+                    }
+                  }
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "publishedAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "createdBy": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "updatedBy": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "locale": {
+                  "type": "string"
+                },
+                "localizations": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "documentId": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
             }
           },
           "createdAt": {
@@ -8364,7 +8620,15 @@
                 "linkjes": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ButtonsTekstknopComponent"
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "documentId": {
+                        "type": "string"
+                      }
+                    }
                   }
                 },
                 "createdAt": {
@@ -8749,20 +9013,6 @@
           }
         }
       },
-      "ButtonsTekstknopComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "label": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          }
-        }
-      },
       "HomeRequest": {
         "type": "object",
         "required": [
@@ -9045,6 +9295,20 @@
           },
           "meta": {
             "type": "object"
+          }
+        }
+      },
+      "ButtonsTekstknopComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
           }
         }
       },
@@ -10163,6 +10427,9 @@
                       },
                       {
                         "$ref": "#/components/schemas/SectiesDubbeleFotoSectieComponent"
+                      },
+                      {
+                        "$ref": "#/components/schemas/SectiesGroteFotoSectieComponent"
                       }
                     ]
                   },
@@ -10172,7 +10439,8 @@
                       "secties.tekst-met-titel-rechts": "#/components/schemas/SectiesTekstMetTitelRechtsComponent",
                       "secties.tekst-met-titel-links": "#/components/schemas/SectiesTekstMetTitelLinksComponent",
                       "secties.tekst-met-foto-horizontaal": "#/components/schemas/SectiesTekstMetFotoHorizontaalComponent",
-                      "secties.dubbele-foto-sectie": "#/components/schemas/SectiesDubbeleFotoSectieComponent"
+                      "secties.dubbele-foto-sectie": "#/components/schemas/SectiesDubbeleFotoSectieComponent",
+                      "secties.grote-foto-sectie": "#/components/schemas/SectiesGroteFotoSectieComponent"
                     }
                   }
                 },

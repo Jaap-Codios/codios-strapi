@@ -342,6 +342,17 @@ export interface SectiesFotoSectie extends Struct.ComponentSchema {
   };
 }
 
+export interface SectiesGroteFotoSectie extends Struct.ComponentSchema {
+  collectionName: 'components_secties_grote_foto_secties';
+  info: {
+    displayName: 'Grote foto sectie';
+    icon: 'bulletList';
+  };
+  attributes: {
+    foto: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
 export interface SectiesHeroSectie extends Struct.ComponentSchema {
   collectionName: 'components_secties_hero_secties';
   info: {
@@ -486,6 +497,7 @@ declare module '@strapi/strapi' {
       'secties.call-to-action-gecentreerd': SectiesCallToActionGecentreerd;
       'secties.dubbele-foto-sectie': SectiesDubbeleFotoSectie;
       'secties.foto-sectie': SectiesFotoSectie;
+      'secties.grote-foto-sectie': SectiesGroteFotoSectie;
       'secties.hero-sectie': SectiesHeroSectie;
       'secties.team-sectie': SectiesTeamSectie;
       'secties.tekst-met-foto-horizontaal': SectiesTekstMetFotoHorizontaal;

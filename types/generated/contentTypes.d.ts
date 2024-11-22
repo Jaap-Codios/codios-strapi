@@ -405,6 +405,7 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
         'secties.tekst-met-titel-links',
         'secties.tekst-met-foto-horizontaal',
         'secties.dubbele-foto-sectie',
+        'secties.grote-foto-sectie',
       ]
     > &
       Schema.Attribute.Required;
@@ -510,7 +511,10 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    linkjes: Schema.Attribute.Component<'buttons.tekstknop', true>;
+    linkjes: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::content-pagina.content-pagina'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_secties_grote_foto_secties",
+  "info": {
+    "displayName": "Grote foto sectie",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "foto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
