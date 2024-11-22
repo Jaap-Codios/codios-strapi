@@ -76,10 +76,6 @@ export interface ComponentsCaseInformatie extends Struct.ComponentSchema {
       true
     > &
       Schema.Attribute.Required;
-    naam: Schema.Attribute.String & Schema.Attribute.Required;
-    ondertitel: Schema.Attribute.Text & Schema.Attribute.Required;
-    slogan: Schema.Attribute.String & Schema.Attribute.Required;
-    url: Schema.Attribute.String;
   };
 }
 

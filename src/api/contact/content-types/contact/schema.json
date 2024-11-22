@@ -27,22 +27,20 @@
     },
     "btw_nummer": {
       "type": "string",
-      "required": true
+      "required": false
     },
-    "iban": {
+    "kvk": {
       "type": "text",
-      "required": true
-    },
-    "titel": {
-      "type": "string",
-      "required": true,
-      "default": "Contact"
+      "required": false
     },
     "hero": {
       "type": "component",
       "repeatable": false,
       "component": "secties.hero-sectie",
       "required": true
+    },
+    "iban": {
+      "type": "string"
     }
   }
 }

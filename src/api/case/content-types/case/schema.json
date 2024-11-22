@@ -37,6 +37,21 @@
     },
     "slug": {
       "type": "uid"
+    },
+    "naam": {
+      "type": "string",
+      "required": true
+    },
+    "slogan": {
+      "type": "text",
+      "required": false
+    },
+    "case_url": {
+      "type": "string",
+      "required": true
+    },
+    "case_omschrijving": {
+      "type": "text"
     }
   }
 }
