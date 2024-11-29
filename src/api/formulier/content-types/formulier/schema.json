@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "formuliers",
+  "info": {
+    "singularName": "formulier",
+    "pluralName": "formuliers",
+    "displayName": "formulier"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "naam": {
+      "type": "text"
+    },
+    "bedrijf": {
+      "type": "text"
+    },
+    "email": {
+      "type": "text"
+    },
+    "telefoon": {
+      "type": "string"
+    },
+    "bericht": {
+      "type": "text"
+    }
+  }
+}

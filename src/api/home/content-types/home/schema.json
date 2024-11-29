@@ -21,6 +21,11 @@
         "home.cases-sectie",
         "home.leaderboard-sectie"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.seo"
     }
   }
 }
