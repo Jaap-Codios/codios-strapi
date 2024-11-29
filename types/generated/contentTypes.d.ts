@@ -528,6 +528,38 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFormulierFormulier extends Struct.CollectionTypeSchema {
+  collectionName: 'formuliers';
+  info: {
+    displayName: 'formulier';
+    pluralName: 'formuliers';
+    singularName: 'formulier';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bedrijf: Schema.Attribute.Text;
+    bericht: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::formulier.formulier'
+    > &
+      Schema.Attribute.Private;
+    naam: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    telefoon: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
@@ -556,6 +588,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1422,6 +1455,7 @@ declare module '@strapi/strapi' {
       'api::contact.contact': ApiContactContact;
       'api::content-pagina.content-pagina': ApiContentPaginaContentPagina;
       'api::footer.footer': ApiFooterFooter;
+      'api::formulier.formulier': ApiFormulierFormulier;
       'api::home.home': ApiHomeHome;
       'api::over-ons.over-ons': ApiOverOnsOverOns;
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
