@@ -30,6 +30,11 @@
       "repeatable": false,
       "component": "secties.hero-sectie",
       "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }
