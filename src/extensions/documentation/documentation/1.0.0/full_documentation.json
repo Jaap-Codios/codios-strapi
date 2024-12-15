@@ -13,7 +13,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-12-15T14:17:50.363Z"
+    "x-generation-date": "2024-12-15T14:54:09.276Z"
   },
   "openapi": "3.0.0",
   "x-strapi-config": {
@@ -11508,10 +11508,7 @@
                 }
               },
               "seo": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/SharedSeoComponent"
-                }
+                "$ref": "#/components/schemas/SharedSeoComponent"
               },
               "locale": {
                 "type": "string"
@@ -11710,10 +11707,7 @@
             }
           },
           "seo": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SharedSeoComponent"
-            }
+            "$ref": "#/components/schemas/SharedSeoComponent"
           },
           "createdAt": {
             "type": "string",
@@ -11784,10 +11778,7 @@
                   }
                 },
                 "seo": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SharedSeoComponent"
-                  }
+                  "$ref": "#/components/schemas/SharedSeoComponent"
                 },
                 "createdAt": {
                   "type": "string",
